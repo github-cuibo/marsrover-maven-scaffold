@@ -1,9 +1,10 @@
 public class Area {
     private int x;
     private int y;
+
     public Area(int width, int height) {
-        this.x=width;
-        this.y=height;
+        this.x = width;
+        this.y = height;
     }
 
     public int getX() {
