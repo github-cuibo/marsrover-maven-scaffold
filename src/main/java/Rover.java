@@ -9,7 +9,14 @@ public class Rover {
     private String direction;
 
     public void move() {
-        x += 1;
+        if(direction.equals(Rover.EAST))
+            x+=1;
+        if(direction.equals(Rover.WEST))
+            x-=1;
+        if(direction.equals(Rover.SOUTH))
+            y-=1;
+        if(direction.equals(Rover.NORTH))
+            y+=1;
     }
 
     public void land(Area area, int x, int y, String direction) {
@@ -23,13 +30,26 @@ public class Rover {
     }
 
     public void turnLeft() {
-        if (direction == "E")
-            direction = "N";
-        if (direction == "S")
-            direction = "E";
-        if (direction == "W")
-            direction = "S";
-        if (direction == "N")
-            direction = "W";
+        if (direction.equals(Rover.EAST)){
+            direction = Rover.NORTH;
+            return;
+        }
+
+
+        if (direction.equals(Rover.SOUTH)){
+            direction = Rover.EAST;
+            return;
+        }
+
+        if (direction.equals(Rover.WEST)){
+            direction = Rover.SOUTH;
+            return;
+        }
+
+        if (direction.equals(Rover.NORTH)){
+            direction = Rover.WEST;
+            return;
+        }
+
     }
 }
