@@ -40,23 +40,12 @@ public class Rover {
     public void turnLeft() {
         if (direction.equals(Rover.EAST)) {
             direction = Rover.NORTH;
-            return;
-        }
-
-
-        if (direction.equals(Rover.SOUTH)) {
+        } else if (direction.equals(Rover.SOUTH)) {
             direction = Rover.EAST;
-            return;
-        }
-
-        if (direction.equals(Rover.WEST)) {
+        } else if (direction.equals(Rover.WEST)) {
             direction = Rover.SOUTH;
-            return;
-        }
-
-        if (direction.equals(Rover.NORTH)) {
+        } else if (direction.equals(Rover.NORTH)) {
             direction = Rover.WEST;
-            return;
         }
 
     }
